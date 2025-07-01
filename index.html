@@ -4,6 +4,9 @@
   <!-- ✅ GOOGLE VERIFICATION META TAG -->
   <meta name="google-site-verification" content="2q8sWEukUra8JxBvLAN5QHuZT7CyutB0Z98l7xUhmzs" />
 
+  <!-- 📱 MOBILE RESPONSIVENESS -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <!-- 🧠 SEO META TAGS -->
   <meta charset="UTF-8">
   <meta name="description" content="Test your friendship with this fun and sassy friendship calculator!">
@@ -16,22 +19,24 @@
       background: #b60ac6;
       font-family: 'Comic Sans MS', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
       text-align: center;
-      margin-top: 200px;
+      margin-top: 100px;
+      padding: 20px;
     }
 
     .container {
       background: rgb(244, 220, 6);
-      padding: 100px;
-      border-radius: 500px;
+      padding: 60px;
+      border-radius: 50px;
       box-shadow: 0 10px 20px rgba(114, 125, 11, 0.808);
-      width: 300px;
+      width: 350px;
+      max-width: 90%;
       margin: auto;
     }
 
     input {
       padding: 10px;
       margin: 10px;
-      width: 80%;
+      width: 85%;
       border: 2px solid #181518;
       border-radius: 10px;
     }
@@ -53,6 +58,32 @@
       margin-top: 20px;
       font-size: 20px;
       color: #d1006b;
+    }
+
+    /* 📱 MOBILE-FRIENDLY STYLES */
+    @media (max-width: 500px) {
+      body {
+        margin-top: 50px;
+      }
+
+      .container {
+        padding: 40px;
+        border-radius: 30px;
+      }
+
+      button {
+        width: 100%;
+        font-size: 16px;
+      }
+
+      input {
+        width: 95%;
+        font-size: 16px;
+      }
+
+      #result {
+        font-size: 18px;
+      }
     }
   </style>
 </head>
@@ -84,13 +115,13 @@
       } else if (score > 60) {
         message = "Great friendship vibes! 😊";
       } else if (score > 40) {
-        message = "Good friends. Could get better! ✌️";
+        message = "Good friends. Could get better! ✌";
       } else {
         message = "Not bad ... try bonding more 🤔";
       }
 
       document.getElementById("result").innerText =
-        `${name1} ❤️ ${name2} = ${score}%\n${message}`;
+        ${name1} ❤ ${name2} = ${score}%\n${message};
     }
   </script>
 </body>
