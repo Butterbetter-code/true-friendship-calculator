@@ -1,54 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <style>body {
-  background: #b60ac6;
-  font-family: 'Comic Sans MS', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  text-align: center;
-  margin-top: 200px;
-}
-
-.container {
-  background: rgb(244, 220, 6);
-  padding: 100px;
-  border-radius: 500px;
-  box-shadow: 0 10px 20px rgba(114, 125, 11, 0.808);
-  width: 300px;
-  margin: auto;
-}
-
-input {
-  padding: 10px;
-  margin: 10px;
-  width: 80%;
-  border: 2px solid #181518;
-  border-radius: 10px;
-}
-
-button {
-  padding: 10px 20px;
-  background-color: #ea45ed;
-  color: white;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #ed1b10;
-}
-
-#result {
-  margin-top: 20px;
-  font-size: 20px;
-  color: #d1006b;
-}
-</style>
+  <!-- 🧠 SEO META TAGS START -->
   <meta charset="UTF-8">
-  <title>Friendship Calculator</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="Test your friendship with this fun and sassy friendship calculator!">
+  <meta name="keywords" content="friendship calculator, true friendship, love calculator, online calculator">
+  <meta name="author" content="Lily Butter">
+  <title>True Friendship Calculator | Lily's Project</title>
+  <!-- 🧠 SEO META TAGS END -->
+
+  <style>
+    body {
+      background: #b60ac6;
+      font-family: 'Comic Sans MS', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      text-align: center;
+      margin-top: 200px;
+    }
+
+    .container {
+      background: rgb(244, 220, 6);
+      padding: 100px;
+      border-radius: 500px;
+      box-shadow: 0 10px 20px rgba(114, 125, 11, 0.808);
+      width: 300px;
+      margin: auto;
+    }
+
+    input {
+      padding: 10px;
+      margin: 10px;
+      width: 80%;
+      border: 2px solid #181518;
+      border-radius: 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #ea45ed;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #ed1b10;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 20px;
+      color: #d1006b;
+    }
+  </style>
 </head>
+
 <body>
   <div class="container">
     <h3>💖 Friendship Calculator 💖</h3>
@@ -57,33 +63,33 @@ button:hover {
     <button onclick="calculateFriendship()">Check y😉ur Friendship</button>
     <p id="result"></p>
   </div>
+
   <script>
-  function calculateFriendship() {
-    let name1 = document.getElementById("name1").value.trim().toLowerCase();
-    let name2 = document.getElementById("name2").value.trim().toLowerCase();
+    function calculateFriendship() {
+      let name1 = document.getElementById("name1").value.trim().toLowerCase();
+      let name2 = document.getElementById("name2").value.trim().toLowerCase();
 
-    if (name1 === "" || name2 === "") {
-      document.getElementById("result").innerText = "Please enter both names!";
-      return;
+      if (name1 === "" || name2 === "") {
+        document.getElementById("result").innerText = "Please enter both names!";
+        return;
+      }
+
+      let score = Math.floor(Math.random() * 101);
+      let message = "";
+
+      if (score > 80) {
+        message = "You two are BFF goals! 💯";
+      } else if (score > 60) {
+        message = "Great friendship vibes! 😊";
+      } else if (score > 40) {
+        message = "Good friends. Could get better! ✌️";
+      } else {
+        message = "Not bad ... try bonding more 🤔";
+      }
+
+      document.getElementById("result").innerText =
+        `${name1} ❤️ ${name2} = ${score}%\n${message}`;
     }
-
-    let score = Math.floor(Math.random() * 101);
-    let message = "";
-
-    if (score > 80) {
-      message = "You two are BFF goals! 💯";
-    } else if (score > 60) {
-      message = "Great friendship vibes! 😊";
-    } else if (score > 40) {
-      message = "Good friends. Could get better! ✌️";
-    } else {
-      message = "Not bad ... try bonding more 🤔";
-    }
-
-    document.getElementById("result").innerText =
-      `${name1} ❤️ ${name2} = ${score}%\n${message}`;
-  }
-</script>
-
+  </script>
 </body>
 </html>
