@@ -58,6 +58,7 @@
       margin-top: 20px;
       font-size: 20px;
       color: #d1006b;
+      white-space: pre-line; /* this preserves line breaks on mobile! */
     }
 
     /* 📱 MOBILE-FRIENDLY STYLES */
@@ -93,12 +94,12 @@
     <h3>💖 Friendship Calculator 💖</h3>
     <input type="text" id="name1" placeholder="Your Name">
     <input type="text" id="name2" placeholder="Friend's Name">
-    <button onclick="calculateFriendship()">Check y😉ur Friendship</button>
+    <button id="checkBtn">Check y😉ur Friendship</button>
     <p id="result"></p>
   </div>
 
   <script>
-    function calculateFriendship() {
+    document.getElementById("checkBtn").addEventListener("click", function () {
       let name1 = document.getElementById("name1").value.trim().toLowerCase();
       let name2 = document.getElementById("name2").value.trim().toLowerCase();
 
@@ -115,14 +116,14 @@
       } else if (score > 60) {
         message = "Great friendship vibes! 😊";
       } else if (score > 40) {
-        message = "Good friends. Could get better! ✌";
+        message = "Good friends. Could get better! ✌️";
       } else {
         message = "Not bad ... try bonding more 🤔";
       }
 
       document.getElementById("result").innerText =
-        ${name1} ❤ ${name2} = ${score}%\n${message};
-    }
+        `${name1} ❤️ ${name2} = ${score}%\n${message}`;
+    });
   </script>
 </body>
 </html>
